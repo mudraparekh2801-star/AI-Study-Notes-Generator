@@ -2,63 +2,276 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>AI Study Notes Generator</title>
+    <title>StudyMate AI — Your AI Study Companion</title>
 
     <link rel="stylesheet" href="/style.css">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+    <link rel="apple-touch-icon" href="/icon-192.png">
+    <meta name="theme-color" content="#704fd0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Social Media & Link Preview Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-render-app-name.onrender.com/">
+    <meta property="og:title" content="StudyMate AI — Your AI Study Companion">
+    <meta property="og:description" content="Turn any topic into simple, clear and exam-friendly study material with AI.">
+    <meta property="og:image" content="https://your-render-app-name.onrender.com/icon-512.png">
 
+    <!-- Twitter Preview Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="StudyMate AI">
+    <meta name="twitter:description" content="Turn any topic into simple, clear and exam-friendly study material with AI.">
+    <meta name="twitter:image" content="https://your-render-app-name.onrender.com/icon-512.png">
+
+    <!-- PWA & CSS Links -->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" href="/icon-192.png">
+    <meta name="theme-color" content="#704fd0">
 </head>
 
 <body>
 
-<div class="container">
+    <div class="app">
 
-    <h1>📚 AI Study Notes Generator</h1>
+        <!-- Navigation -->
+        <nav class="navbar">
 
-    <p class="intro">
-        ⭐ Welcome to the AI Study Notes Generator!
-        Enter any topic and generate concise,
-        exam-friendly study notes using AI.
+            <div class="logo">
+                📚 <span>StudyMate AI</span>
+            </div>
+
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#notes">Notes</a>
+                <a href="#tools">Study Tools</a>
+            </div>
+
+        </nav>
+
+
+        <!-- Hero Section -->
+        <main id="home" class="hero">
+
+            <div class="hero-content">
+
+                <div class="badge">
+                    ✨ AI-Powered Study Companion
+                </div>
+
+                <h1>
+                    Study smarter.<br>
+                    <span>Not harder.</span>
+                </h1>
+
+                <p>
+                    Turn any topic into simple, clear and
+                    exam-friendly study material with AI.
+                </p>
+
+
+                <!-- Topic Input -->
+                <div class="study-box" id="notes">
+
+                    <label for="topicInput">
+                        What are you studying today?
+                    </label>
+
+                    <div class="input-row">
+
+                        <input
+                            id="topicInput"
+                            type="text"
+                            placeholder="e.g. Computer Networks"
+                        >
+
+                        <button id="generateBtn">
+                            ✨ Generate Notes
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+
+        <!-- Study Tools -->
+        <section id="tools" class="tools-section">
+
+            <div class="section-heading">
+
+                <span>QUICK TOOLS</span>
+
+                <h2>
+                    Everything you need to study better.
+                </h2>
+
+            </div>
+
+
+            <div class="tools-grid">
+
+                <div class="tool-card">
+                    <div class="tool-icon">📝</div>
+
+                    <h3>AI Notes</h3>
+
+                    <p>
+                        Generate simple and structured
+                        notes from any topic.
+                    </p>
+                </div>
+
+
+                <div class="tool-card quiz-card">
+
+    <div class="tool-icon">🧠</div>
+
+    <h3>Quiz Generator</h3>
+
+    <p>
+        Test your knowledge with
+        AI-generated questions.
     </p>
 
-    <div class="input-section">
+    <button id="quizBtn" class="tool-button">
+        Create Quiz
+    </button>
 
-        <input
-            type="text"
-            placeholder="Enter a topic e.g. Computer Networks"
-        >
+</div>
 
-        <button>
-            Generate Notes
-        </button>
+
+                <div class="tool-card flashcard-card">
+
+    <div class="tool-icon">🃏</div>
+
+    <h3>Flashcards</h3>
+
+    <p>
+        Turn difficult concepts into
+        quick revision cards.
+    </p>
+
+    <button id="flashcardBtn" class="tool-button">
+        Create Flashcards
+    </button>
+
+</div>
+
+
+                <div class="tool-card">
+                    <div class="tool-icon">🔖</div>
+
+                    <h3>Saved Notes</h3>
+
+                    <p>
+                        Keep your important study
+                        material in one place.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Generated Notes -->
+        <section class="notes-section">
+
+            <div class="notes-heading">
+
+                <span>YOUR NOTES</span>
+
+                <h2>Generated Study Material</h2>
+
+            </div>
+<button id="saveNotesBtn" class="save-button">
+    🔖 Save Notes
+</button>
+            <div id="notesoutput">
+
+                <p>
+                    Your AI-generated notes will appear here...
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer>
+
+            <p>
+                Made with 💜 for smarter studying.
+            </p>
+
+        </footer>
+<section class="saved-section" id="saved">
+
+    <div class="notes-heading">
+        <span>YOUR LIBRARY</span>
+        <h2>Saved Notes</h2>
+    </div>
+
+    <div id="savedNotesOutput">
+        <p>
+            Your saved notes will appear here...
+        </p>
+    </div>
+
+</section>
+    </div>
+<section class="quiz-section" id="quiz">
+
+    <div class="notes-heading">
+
+        <span>TEST YOURSELF</span>
+
+        <h2>AI Generated Quiz</h2>
 
     </div>
 
-    <h2>👨‍🎓 Generated Notes</h2>
+    <div id="quizOutput">
 
-    <div class="notes-actions">
+        <p>
+            Your quiz will appear here...
+        </p>
 
-    <button id="copyBtn">
-        📋 Copy Notes
-    </button>
+    </div>
 
-    <button id="downloadBtn">
-        📄 Download Notes
-    </button>
+</section>
+<section class="flashcards-section" id="flashcards">
 
-</div>
+    <div class="notes-heading">
 
-<div id="notesoutput">
-    <p>Your notes will appear here...</p>
-</div>
-</div>
+        <span>QUICK REVISION</span>
 
-<script src="/script.js"></script>
+        <h2>AI Flashcards</h2>
+
+    </div>
+
+    <div id="flashcardsOutput">
+
+        <p>
+            Your flashcards will appear here...
+        </p>
+
+    </div>
+
+</section>
+
+    <script src="/script.js"></script>
 
 </body>
 
